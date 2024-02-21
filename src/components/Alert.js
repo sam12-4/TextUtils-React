@@ -1,4 +1,3 @@
-import { type } from '@testing-library/user-event/dist/type'
 import React from 'react'
 
 export default function Alert(props) {
@@ -9,9 +8,13 @@ export default function Alert(props) {
     }
 
   return (
-    props.message && <div class={`alert alert-${props.message.type} alert-dismissible fade show`} role="alert">
+    <div style={{height:"55px"}}>
+  {props.message && <div className={`alert alert-${props.message.type} alert-dismissible fade show`} role="alert">
         <strong>{capitalize(props.message.type)}</strong>: {props.message.msg}
-</div>
+        </div>
+        }
+    </div>
+      
 
   )
 }
